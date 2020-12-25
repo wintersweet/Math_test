@@ -7,15 +7,74 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D81D04B724499A480065D18F /* MyKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = D81D04B624499A480065D18F /* MyKVO.m */; };
+		D81D04BA2449ADA20065D18F /* ObserverClass.m in Sources */ = {isa = PBXBuildFile; fileRef = D81D04B92449ADA20065D18F /* ObserverClass.m */; };
+		D81D04BD244D462D0065D18F /* LinkedNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D81D04BC244D462D0065D18F /* LinkedNode.m */; };
+		D83522E622E9AABF00A8A50D /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83522E522E9AABF00A8A50D /* Math.swift */; };
+		D83522EB22E9ACF000A8A50D /* SomeReview.c in Sources */ = {isa = PBXBuildFile; fileRef = D83522EA22E9ACF000A8A50D /* SomeReview.c */; };
+		D876F6CE259447BD00CCB751 /* SeniorInterview.m in Sources */ = {isa = PBXBuildFile; fileRef = D876F6CD259447BD00CCB751 /* SeniorInterview.m */; };
+		D876F74D25958B7100CCB751 /* HeadNews.m in Sources */ = {isa = PBXBuildFile; fileRef = D876F74C25958B7100CCB751 /* HeadNews.m */; };
+		D88461DD243D5F6F00F8C37D /* MathTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D88461DC243D5F6F00F8C37D /* MathTest.m */; };
+		D88461E3243D62CE00F8C37D /* NSObject+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = D88461E2243D62CE00F8C37D /* NSObject+Category.m */; };
+		D88461E6243EFA3B00F8C37D /* GCD.m in Sources */ = {isa = PBXBuildFile; fileRef = D88461E5243EFA3B00F8C37D /* GCD.m */; };
+		D88461E9243F0B5100F8C37D /* Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = D88461E8243F0B5100F8C37D /* Animation.m */; };
+		D88461EC243F100400F8C37D /* Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = D88461EB243F100400F8C37D /* Runtime.m */; };
+		D88461EF243F180D00F8C37D /* Runloop.m in Sources */ = {isa = PBXBuildFile; fileRef = D88461EE243F180D00F8C37D /* Runloop.m */; };
+		D88461F2243F2F9E00F8C37D /* Person+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = D88461F1243F2F9E00F8C37D /* Person+Category.m */; };
+		D898835E2452C74900D62344 /* MyContext.m in Sources */ = {isa = PBXBuildFile; fileRef = D898835D2452C74900D62344 /* MyContext.m */; };
+		D899B3E1237BAC5D00A43C4F /* Set_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D899B3E0237BAC5D00A43C4F /* Set_test.swift */; };
+		D8B96D32245021C000D0ABD3 /* BinaryTree.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B96D31245021C000D0ABD3 /* BinaryTree.m */; };
+		D8D185FF22EEE63100A2C2D5 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D185FE22EEE63100A2C2D5 /* TestViewController.m */; };
+		D8E328EA2431DD59006A63F9 /* ReverseList.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E328E92431DD59006A63F9 /* ReverseList.m */; };
 		D8E85E0822E5A29B0066737A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E85E0722E5A29B0066737A /* AppDelegate.m */; };
 		D8E85E0B22E5A29B0066737A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E85E0A22E5A29B0066737A /* ViewController.m */; };
 		D8E85E0E22E5A29B0066737A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8E85E0C22E5A29B0066737A /* Main.storyboard */; };
 		D8E85E1022E5A29C0066737A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8E85E0F22E5A29C0066737A /* Assets.xcassets */; };
 		D8E85E1322E5A29C0066737A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8E85E1122E5A29C0066737A /* LaunchScreen.storyboard */; };
 		D8E85E1622E5A29C0066737A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E85E1522E5A29C0066737A /* main.m */; };
+		D8FE18BB23978A1100B69586 /* KVO_KVCtest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FE18BA23978A1100B69586 /* KVO_KVCtest.swift */; };
+		D8FEF638239F815C00AD3BE0 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FEF637239F815C00AD3BE0 /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D81D04B524499A480065D18F /* MyKVO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyKVO.h; sourceTree = "<group>"; };
+		D81D04B624499A480065D18F /* MyKVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyKVO.m; sourceTree = "<group>"; };
+		D81D04B82449ADA20065D18F /* ObserverClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObserverClass.h; sourceTree = "<group>"; };
+		D81D04B92449ADA20065D18F /* ObserverClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObserverClass.m; sourceTree = "<group>"; };
+		D81D04BB244D462D0065D18F /* LinkedNode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinkedNode.h; sourceTree = "<group>"; };
+		D81D04BC244D462D0065D18F /* LinkedNode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinkedNode.m; sourceTree = "<group>"; };
+		D83522E422E9AABE00A8A50D /* MathAlgorithm-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MathAlgorithm-Bridging-Header.h"; sourceTree = "<group>"; };
+		D83522E522E9AABF00A8A50D /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		D83522E922E9ACF000A8A50D /* SomeReview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SomeReview.h; sourceTree = "<group>"; };
+		D83522EA22E9ACF000A8A50D /* SomeReview.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = SomeReview.c; sourceTree = "<group>"; };
+		D876F6CC259447BD00CCB751 /* SeniorInterview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeniorInterview.h; sourceTree = "<group>"; };
+		D876F6CD259447BD00CCB751 /* SeniorInterview.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeniorInterview.m; sourceTree = "<group>"; };
+		D876F74B25958B7100CCB751 /* HeadNews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeadNews.h; sourceTree = "<group>"; };
+		D876F74C25958B7100CCB751 /* HeadNews.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeadNews.m; sourceTree = "<group>"; };
+		D88461DB243D5F6F00F8C37D /* MathTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MathTest.h; sourceTree = "<group>"; };
+		D88461DC243D5F6F00F8C37D /* MathTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MathTest.m; sourceTree = "<group>"; };
+		D88461E1243D62CE00F8C37D /* NSObject+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Category.h"; sourceTree = "<group>"; };
+		D88461E2243D62CE00F8C37D /* NSObject+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Category.m"; sourceTree = "<group>"; };
+		D88461E4243EFA3B00F8C37D /* GCD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCD.h; sourceTree = "<group>"; };
+		D88461E5243EFA3B00F8C37D /* GCD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCD.m; sourceTree = "<group>"; };
+		D88461E7243F0B5100F8C37D /* Animation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Animation.h; sourceTree = "<group>"; };
+		D88461E8243F0B5100F8C37D /* Animation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Animation.m; sourceTree = "<group>"; };
+		D88461EA243F100400F8C37D /* Runtime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Runtime.h; sourceTree = "<group>"; };
+		D88461EB243F100400F8C37D /* Runtime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Runtime.m; sourceTree = "<group>"; };
+		D88461ED243F180D00F8C37D /* Runloop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Runloop.h; sourceTree = "<group>"; };
+		D88461EE243F180D00F8C37D /* Runloop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Runloop.m; sourceTree = "<group>"; };
+		D88461F0243F2F9E00F8C37D /* Person+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+Category.h"; sourceTree = "<group>"; };
+		D88461F1243F2F9E00F8C37D /* Person+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+Category.m"; sourceTree = "<group>"; };
+		D898835C2452C74900D62344 /* MyContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyContext.h; sourceTree = "<group>"; };
+		D898835D2452C74900D62344 /* MyContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyContext.m; sourceTree = "<group>"; };
+		D899B3E0237BAC5D00A43C4F /* Set_test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Set_test.swift; sourceTree = "<group>"; };
+		D8B96D30245021C000D0ABD3 /* BinaryTree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinaryTree.h; sourceTree = "<group>"; };
+		D8B96D31245021C000D0ABD3 /* BinaryTree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BinaryTree.m; sourceTree = "<group>"; };
+		D8D185FD22EEE63100A2C2D5 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		D8D185FE22EEE63100A2C2D5 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		D8E328E82431DD59006A63F9 /* ReverseList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReverseList.h; sourceTree = "<group>"; };
+		D8E328E92431DD59006A63F9 /* ReverseList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReverseList.m; sourceTree = "<group>"; };
+		D8E8424F23B5E05A00B7CAE3 /* InterviewHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterviewHeader.h; sourceTree = "<group>"; };
 		D8E85E0322E5A29B0066737A /* MathAlgorithm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MathAlgorithm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E85E0622E5A29B0066737A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D8E85E0722E5A29B0066737A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +85,9 @@
 		D8E85E1222E5A29C0066737A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8E85E1422E5A29C0066737A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8E85E1522E5A29C0066737A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D8FE18BA23978A1100B69586 /* KVO_KVCtest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KVO_KVCtest.swift; sourceTree = "<group>"; };
+		D8FEF636239F815C00AD3BE0 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		D8FEF637239F815C00AD3BE0 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +101,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D898835B2452C73000D62344 /* 画图相关 */ = {
+			isa = PBXGroup;
+			children = (
+				D898835C2452C74900D62344 /* MyContext.h */,
+				D898835D2452C74900D62344 /* MyContext.m */,
+			);
+			path = "画图相关";
+			sourceTree = "<group>";
+		};
+		D8E328E72431DD1B006A63F9 /* 算法 */ = {
+			isa = PBXGroup;
+			children = (
+				D8E328E82431DD59006A63F9 /* ReverseList.h */,
+				D8E328E92431DD59006A63F9 /* ReverseList.m */,
+				D88461DB243D5F6F00F8C37D /* MathTest.h */,
+				D88461DC243D5F6F00F8C37D /* MathTest.m */,
+				D81D04BB244D462D0065D18F /* LinkedNode.h */,
+				D81D04BC244D462D0065D18F /* LinkedNode.m */,
+				D8B96D30245021C000D0ABD3 /* BinaryTree.h */,
+				D8B96D31245021C000D0ABD3 /* BinaryTree.m */,
+			);
+			path = "算法";
+			sourceTree = "<group>";
+		};
 		D8E85DFA22E5A29B0066737A = {
 			isa = PBXGroup;
 			children = (
@@ -58,15 +144,48 @@
 		D8E85E0522E5A29B0066737A /* MathAlgorithm */ = {
 			isa = PBXGroup;
 			children = (
+				D898835B2452C73000D62344 /* 画图相关 */,
+				D8E328E72431DD1B006A63F9 /* 算法 */,
 				D8E85E0622E5A29B0066737A /* AppDelegate.h */,
 				D8E85E0722E5A29B0066737A /* AppDelegate.m */,
 				D8E85E0922E5A29B0066737A /* ViewController.h */,
 				D8E85E0A22E5A29B0066737A /* ViewController.m */,
+				D8D185FD22EEE63100A2C2D5 /* TestViewController.h */,
+				D8D185FE22EEE63100A2C2D5 /* TestViewController.m */,
+				D8E8424F23B5E05A00B7CAE3 /* InterviewHeader.h */,
+				D8FEF636239F815C00AD3BE0 /* Person.h */,
+				D8FEF637239F815C00AD3BE0 /* Person.m */,
+				D88461F0243F2F9E00F8C37D /* Person+Category.h */,
+				D88461F1243F2F9E00F8C37D /* Person+Category.m */,
+				D88461E1243D62CE00F8C37D /* NSObject+Category.h */,
+				D88461E2243D62CE00F8C37D /* NSObject+Category.m */,
+				D81D04B524499A480065D18F /* MyKVO.h */,
+				D81D04B624499A480065D18F /* MyKVO.m */,
+				D81D04B82449ADA20065D18F /* ObserverClass.h */,
+				D81D04B92449ADA20065D18F /* ObserverClass.m */,
+				D88461E4243EFA3B00F8C37D /* GCD.h */,
+				D88461E5243EFA3B00F8C37D /* GCD.m */,
+				D88461E7243F0B5100F8C37D /* Animation.h */,
+				D88461E8243F0B5100F8C37D /* Animation.m */,
+				D88461EA243F100400F8C37D /* Runtime.h */,
+				D88461EB243F100400F8C37D /* Runtime.m */,
+				D88461ED243F180D00F8C37D /* Runloop.h */,
+				D88461EE243F180D00F8C37D /* Runloop.m */,
+				D899B3E0237BAC5D00A43C4F /* Set_test.swift */,
+				D8FE18BA23978A1100B69586 /* KVO_KVCtest.swift */,
+				D83522E922E9ACF000A8A50D /* SomeReview.h */,
+				D83522E522E9AABF00A8A50D /* Math.swift */,
+				D83522EA22E9ACF000A8A50D /* SomeReview.c */,
+				D876F6CC259447BD00CCB751 /* SeniorInterview.h */,
+				D876F6CD259447BD00CCB751 /* SeniorInterview.m */,
+				D876F74B25958B7100CCB751 /* HeadNews.h */,
+				D876F74C25958B7100CCB751 /* HeadNews.m */,
 				D8E85E0C22E5A29B0066737A /* Main.storyboard */,
 				D8E85E0F22E5A29C0066737A /* Assets.xcassets */,
 				D8E85E1122E5A29C0066737A /* LaunchScreen.storyboard */,
 				D8E85E1422E5A29C0066737A /* Info.plist */,
 				D8E85E1522E5A29C0066737A /* main.m */,
+				D83522E422E9AABE00A8A50D /* MathAlgorithm-Bridging-Header.h */,
 			);
 			path = MathAlgorithm;
 			sourceTree = "<group>";
@@ -102,6 +221,7 @@
 				TargetAttributes = {
 					D8E85E0222E5A29B0066737A = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -141,9 +261,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D81D04B724499A480065D18F /* MyKVO.m in Sources */,
+				D88461E6243EFA3B00F8C37D /* GCD.m in Sources */,
+				D8D185FF22EEE63100A2C2D5 /* TestViewController.m in Sources */,
+				D88461E9243F0B5100F8C37D /* Animation.m in Sources */,
+				D876F6CE259447BD00CCB751 /* SeniorInterview.m in Sources */,
+				D88461EF243F180D00F8C37D /* Runloop.m in Sources */,
 				D8E85E0B22E5A29B0066737A /* ViewController.m in Sources */,
 				D8E85E1622E5A29C0066737A /* main.m in Sources */,
+				D899B3E1237BAC5D00A43C4F /* Set_test.swift in Sources */,
+				D81D04BD244D462D0065D18F /* LinkedNode.m in Sources */,
+				D898835E2452C74900D62344 /* MyContext.m in Sources */,
 				D8E85E0822E5A29B0066737A /* AppDelegate.m in Sources */,
+				D81D04BA2449ADA20065D18F /* ObserverClass.m in Sources */,
+				D83522EB22E9ACF000A8A50D /* SomeReview.c in Sources */,
+				D8FEF638239F815C00AD3BE0 /* Person.m in Sources */,
+				D83522E622E9AABF00A8A50D /* Math.swift in Sources */,
+				D8E328EA2431DD59006A63F9 /* ReverseList.m in Sources */,
+				D8FE18BB23978A1100B69586 /* KVO_KVCtest.swift in Sources */,
+				D88461DD243D5F6F00F8C37D /* MathTest.m in Sources */,
+				D88461EC243F100400F8C37D /* Runtime.m in Sources */,
+				D876F74D25958B7100CCB751 /* HeadNews.m in Sources */,
+				D88461E3243D62CE00F8C37D /* NSObject+Category.m in Sources */,
+				D8B96D32245021C000D0ABD3 /* BinaryTree.m in Sources */,
+				D88461F2243F2F9E00F8C37D /* Person+Category.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,7 +361,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -273,7 +414,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -285,7 +426,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 8327KC3R8V;
 				INFOPLIST_FILE = MathAlgorithm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -293,6 +437,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wintersweet.MathAlgorithm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MathAlgorithm/MathAlgorithm-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -301,7 +448,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 8327KC3R8V;
 				INFOPLIST_FILE = MathAlgorithm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -309,6 +459,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wintersweet.MathAlgorithm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MathAlgorithm/MathAlgorithm-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
