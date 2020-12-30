@@ -11,7 +11,6 @@
 @implementation HeadNews
 //头条的面试
 /**
-
 1、如何高效的切圆角？
 
 切圆角共有以下三种方案：
@@ -29,7 +28,7 @@ UIView 是 CALayer 的 delegate，UIView 可以响应事件，而 CALayer 则不
 
 4、离屏渲染？
 
-iOS 在不进行预合成的情况下不会直接在屏幕上绘制该图层，这意味着 CPU 和 GPU 必须先准备好屏幕外上下文，然后才能在屏幕上渲染，这会造成更多时间时间和更多的内存的消耗。
+iOS 在不进行预合成的情况下不会直接在屏幕上绘制该图层，这意味着 CPU 和 GPU 必须先准备好屏幕外上下文，然后才能在屏幕上渲染，这会造成更多时间和更多的内存的消耗。
 
 5、Objective - C 是否支持方法重载(overloading)？
 
@@ -57,12 +56,8 @@ KVC（key-Value coding） 键值编码，指iOS开发中，可以允许开发者
 - (void)setValue:(nullable id)value forKey:(NSString *)key;          //通过Key来设值
 - (nullable id)valueForKeyPath:(NSString *)keyPath;                  //通过KeyPath来取值
 - (void)setValue:(nullable id)value forKeyPath:(NSString *)keyPath;  //通过KeyPath来设值
-1
-2
-3
-4
-应用场景：
 
+应用场景：
 动态取值和设值
 访问和改变私有变量
 修改控件的内部属性
@@ -75,13 +70,13 @@ key 不要传 nil，会导致崩溃，可以通过重写setNilValueForKey:来避
 //使用Dispatch Group追加block到Global Group Queue,这些block如果全部执行完毕，就会执行Main Dispatch Queue中的结束处理的block。
 //dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
 //dispatch_group_t group = dispatch_group_create();
-//dispatch_group_async(group, queue, ^{ /*加载图片1 */ });
-//dispatch_group_async(group, queue, ^{ /*加载图片2 */ });
-//dispatch_group_async(group, queue, ^{ /*加载图片3 */ });
+//dispatch_group_async(group, queue, ^{ 加载图片1  });
+//dispatch_group_async(group, queue, ^{ 加载图片2  });
+//dispatch_group_async(group, queue, ^{ 加载图片3  });
 //dispatch_group_notify(group, dispatch_get_main_queue(), ^{
 //        // 合并图片
 //});
-/*
+
 8、NSTimer 有什么注意事项？在 dealloc 中调用 [timer invalidate];会避免循环引用吗？
 时间延后。如果 timer 处于耗时较长的 runloop 中，或者当前 runloop 处于不监视 timer 的 mode 时（如 scrollView 滑动时）。它在下次 runloop 才会触发，所以可能会导致比预期时间要晚。
 循环引用。target 强引用 timer，timer 强引用 target。
@@ -94,16 +89,15 @@ if (timer) {
     dispatch_resume(timer);
 
 循环引用的问题
-在 dealloc 中调用 [timer invalidate];不会避免循环引用。因为 timer 会对 target 进行强引用，所以在 timer 没被释放之前，根本不会走 target 的 dealloc 方法。
+在 dealloc 中调用 [timer invalidate];
+不会避免循环引用。因为 timer 会对 target 进行强引用，所以在 timer 没被释放之前，根本不会走 target 的 dealloc 方法。
 
 可以通过以下几种方法来避免：
 如果 iOS 10 及以上，可以使用init(timeInterval:repeats:block:)。target 不再强引用 timer。记得在 dealloc 中调用 [timer invalidate];，否则会造成内存泄漏。
 timer = Timer(timeInterval: 1.0, repeats: true, block: { [weak self] (timer) in
     self?.timerFunc()
 })
-1
-2
-3
+
 使用中间件的方式来避免循环引用。
 // 定义
 @implementation WeakTimerTarget
@@ -124,25 +118,7 @@ timer = Timer(timeInterval: 1.0, repeats: true, block: { [weak self] (timer) in
 // 使用
 WeakTimerTarget *target = [[WeakTimerTarget alloc] initWithTarget:self selector:@selector(tick)];
 timer = [NSTimer scheduledTimerWithTimeInterval:30.0 target:target selector:@selector(timerDidFire:) ...];
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
+
 9、对 property 的理解
 
 @property = ivar + getter + setter;
@@ -161,18 +137,9 @@ function loop() {
         var message = get_next_message();
         process_message(message);
     } while (message != quit);
-}
-1
-2
-3
-4
-5
-6
-7
+
 12、对 OC 中 Class 的源码理解？其中 cache 的理解？
-
 Class 的底层用 struct 实现，源码如下：
-
 struct _class_t {
     struct _class_t *isa;
     struct _class_t *superclass;
@@ -180,13 +147,7 @@ struct _class_t {
     void *vtable;
     struct _class_ro_t *ro;
 };
-1
-2
-3
-4
-5
-6
-7
+
 Cache用于缓存最近使用的方法。一个类只有一部分方法是常用的，每次调用一个方法之后，这个方法就被缓存到cache中，下次调用时 runtime 会先在 cache 中查找，如果 cache 中没有，才会去 methodList 中查找。以此提升性能。
 
 13、项目优化做了哪些方面？

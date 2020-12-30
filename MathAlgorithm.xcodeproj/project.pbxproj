@@ -14,6 +14,7 @@
 		D83522EB22E9ACF000A8A50D /* SomeReview.c in Sources */ = {isa = PBXBuildFile; fileRef = D83522EA22E9ACF000A8A50D /* SomeReview.c */; };
 		D876F6CE259447BD00CCB751 /* SeniorInterview.m in Sources */ = {isa = PBXBuildFile; fileRef = D876F6CD259447BD00CCB751 /* SeniorInterview.m */; };
 		D876F74D25958B7100CCB751 /* HeadNews.m in Sources */ = {isa = PBXBuildFile; fileRef = D876F74C25958B7100CCB751 /* HeadNews.m */; };
+		D876FB5C259C1F1400CCB751 /* Block.m in Sources */ = {isa = PBXBuildFile; fileRef = D876FB5B259C1F1400CCB751 /* Block.m */; };
 		D88461DD243D5F6F00F8C37D /* MathTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D88461DC243D5F6F00F8C37D /* MathTest.m */; };
 		D88461E3243D62CE00F8C37D /* NSObject+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = D88461E2243D62CE00F8C37D /* NSObject+Category.m */; };
 		D88461E6243EFA3B00F8C37D /* GCD.m in Sources */ = {isa = PBXBuildFile; fileRef = D88461E5243EFA3B00F8C37D /* GCD.m */; };
@@ -51,6 +52,8 @@
 		D876F6CD259447BD00CCB751 /* SeniorInterview.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeniorInterview.m; sourceTree = "<group>"; };
 		D876F74B25958B7100CCB751 /* HeadNews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeadNews.h; sourceTree = "<group>"; };
 		D876F74C25958B7100CCB751 /* HeadNews.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeadNews.m; sourceTree = "<group>"; };
+		D876FB5A259C1F1300CCB751 /* Block.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Block.h; sourceTree = "<group>"; };
+		D876FB5B259C1F1400CCB751 /* Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Block.m; sourceTree = "<group>"; };
 		D88461DB243D5F6F00F8C37D /* MathTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MathTest.h; sourceTree = "<group>"; };
 		D88461DC243D5F6F00F8C37D /* MathTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MathTest.m; sourceTree = "<group>"; };
 		D88461E1243D62CE00F8C37D /* NSObject+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Category.h"; sourceTree = "<group>"; };
@@ -180,6 +183,8 @@
 				D876F6CD259447BD00CCB751 /* SeniorInterview.m */,
 				D876F74B25958B7100CCB751 /* HeadNews.h */,
 				D876F74C25958B7100CCB751 /* HeadNews.m */,
+				D876FB5A259C1F1300CCB751 /* Block.h */,
+				D876FB5B259C1F1400CCB751 /* Block.m */,
 				D8E85E0C22E5A29B0066737A /* Main.storyboard */,
 				D8E85E0F22E5A29C0066737A /* Assets.xcassets */,
 				D8E85E1122E5A29C0066737A /* LaunchScreen.storyboard */,
@@ -284,6 +289,7 @@
 				D876F74D25958B7100CCB751 /* HeadNews.m in Sources */,
 				D88461E3243D62CE00F8C37D /* NSObject+Category.m in Sources */,
 				D8B96D32245021C000D0ABD3 /* BinaryTree.m in Sources */,
+				D876FB5C259C1F1400CCB751 /* Block.m in Sources */,
 				D88461F2243F2F9E00F8C37D /* Person+Category.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
