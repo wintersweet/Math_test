@@ -51,8 +51,95 @@
 //    testBlock3();
 //    testBlock4();
 //    [self testBlockStrongWeak];
-    [self initTicketStatusNotSave];
+//    [self initTicketStatusNotSave];
+//    [self testCopy];
+//    [self mutableInstanceCopy];
+    [self containerInstanceShallowCopy];
 }
+
+//copy，       浅拷贝（指针复制）
+//mutableCopy，深拷贝（对象复制 指针+内存），返回对象可变（产生新的可变对象）
+- (void)testCopy {
+    NSString *string = @"Hello";
+    NSString *stringCopy = [string copy];
+    //copy，浅拷贝（拷贝出一个新的指针，指向string指向的内存地址）
+    NSLog(@"string: %@, %p", string, string);
+    NSLog(@"stringCOpy: %@, %p", stringCopy, stringCopy);
+    //mutableCopy，深拷贝（拷贝出一个新的指针，并且拷贝一份string指向的内存并指向它，不指向string指向的内存地址）
+    NSString *stringMutableCopy = [string mutableCopy];
+    NSLog(@"stringMutableCopy: %@, %p", stringMutableCopy, stringMutableCopy);
+}
+
+//copy，       深拷贝（对象复制），返回对象不可变
+//mutableCopy，深拷贝（对象复制），返回对象可变
+- (void)mutableInstanceCopy {
+    NSMutableString *string = [NSMutableString stringWithString:@"hello"];
+    //copy 深拷贝，返回对象不可变
+    id mutableStringCopy = [string copy];
+    //[mutableStringCopy appendString:@"!"];
+    NSLog(@"string: %@, %p", string, string);
+    NSLog(@"mutableStringCopy: %@, %p", mutableStringCopy, mutableStringCopy);
+    //mutableCopy 深拷贝，返回对象可变
+    NSMutableString *mutableStringMutableCopy = [string mutableCopy];
+    NSLog(@"mutableStringMutableCopy: %@, %p", mutableStringMutableCopy, mutableStringMutableCopy);
+}
+
+//注意容器里套可变对象的情况（容器内的元素都是浅拷贝）
+//开发时注意，数组中都是模型时，拷贝后的数组中的模型还是原来数组的模型，一个变都改变
+- (void)containerInstanceShallowCopy
+{
+    NSArray *array = [NSArray arrayWithObjects:[NSMutableString stringWithString:@"Welcome"], @"to", @"Xcode", nil];
+
+    //未创建了新的容器，容器内的元素是指针赋值（浅拷贝）
+    NSArray *arrayCopy = [array copy];
+    //创建了新的容器，容器内的元素是指针赋值（浅拷贝）
+    NSMutableArray *arrayMutableCopy = [array mutableCopy];
+
+    NSLog(@"array:     %p", array);
+    NSLog(@"arrayCopy: %p", arrayCopy);
+    NSLog(@"arrayMutableCopy: %p", arrayMutableCopy);
+
+    //容器内的对象是浅拷贝，即它们在内存中只有一份
+    NSMutableString *testString = [array objectAtIndex:0];
+    [testString appendString:@" you"];
+    //三个数组的内容同时改变
+    NSLog(@"array[0]: %@", array[0]);
+    NSLog(@"arrayCopy[0]: %@", arrayCopy[0]);
+    NSLog(@"arrayMutableCopy[0]: %@", arrayMutableCopy[0]);
+}
+
+//对象序列化，实现真正意义的拷贝（数组内的对象也实现深拷贝）：
+- (void)containerInstanceDeepCopy
+{
+    NSArray *array = [NSArray arrayWithObjects:[NSMutableString stringWithString:@"Welcome"], @"to", @"Xcode", nil];
+
+    //数组内对象是指针复制
+    NSArray *deepCopyArray = [[NSArray alloc] initWithArray:array];
+    //真正意义上的深复制，数组内对象是对象复制
+    NSArray *trueDeepCopyArray = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:array]];
+
+    NSLog(@"array: %p", array);
+    NSLog(@"deepCopyArray: %p", deepCopyArray);
+    NSLog(@"trueDeepCopyArray: %p", trueDeepCopyArray);
+
+    //改变array的第一个元素
+    [[array objectAtIndex:0] appendString:@" you"];
+
+    //只影响deepCopyArray数组的第一个元素
+    NSLog(@"array[0]: %@", array[0]);
+    NSLog(@"arrayCopy[0]: %@", deepCopyArray[0]);
+    //不影响trueDeepCopyArray数组的第一个元素，是真正意义上的深拷贝
+    NSLog(@"arrayMutableCopy[0]: %@", trueDeepCopyArray[0]);
+}
+#pragma mark---深浅copy 的几个应用
+/*
+1、@property (nonatomic, strong) NSMutableString *name;为什么不用copy修饰？
+若用copy修饰这个可变字符串属性，当给name属性赋值时，setter方法会触发深拷贝，
+导致结果是name属性不再可变，因为可变字符串的copy返回不可变对象
+
+
+ */
+
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -316,6 +403,7 @@
         }
     }
 }
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     static int i = 0;
