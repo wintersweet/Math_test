@@ -24,13 +24,79 @@
 - (void)testFunction
 {
     NSArray *arr =  @[@(7), @(10), @(5), @(15), @(8)];
-    NSArray *newArr = [arr reverseObjectEnumerator].allObjects;
-    NSMutableArray *resourceArr = [NSMutableArray arrayWithArray:arr];
-    NSMutableArray *bubbleArr =  [self bubbleSortWithArray:resourceArr];
-    [self quickSortArray:resourceArr leftIndex:0 rightIndex:resourceArr.count - 1];
+//    NSArray *newArr = [arr reverseObjectEnumerator].allObjects;
+//    NSMutableArray *resourceArr = [NSMutableArray arrayWithArray:arr];
+//    NSMutableArray *bubbleArr =  [self bubbleSortWithArray:resourceArr];
+//    [self quickSortArray:resourceArr leftIndex:0 rightIndex:resourceArr.count - 1];
+
+    int arrray[5] = { -2, 1, -3 };
+    int c = sizeof(arrray);
+    maxSubArray(arrray);
 }
 
-/**
+/*
+给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
+示例:
+输入: [-2,1,-3,4,-1,2,1,-5,4]
+输出: 6
+解释: 连续子数组 [4,-1,2,1] 的和最大，为 6。
+进阶:*/
+int maxSubArray(int arrray[])
+{
+    int max =  arrray[0];
+    int sum = 0;
+
+    int length = sizeof(arrray) / sizeof(int);
+    for (int i = 0; i < length; i++) {
+        sum = 0;
+        for (int j = i; j < length; j++) {
+            sum += arrray[j];
+            if (sum > max) {
+                max = sum;
+            }
+        }
+    }
+    return max;
+}
+
+/*
+给定一个 haystack 字符串和一个 needle 字符串，在 haystack 字符串中找出 needle 字符串出现的第一个位置 (从0开始)。如果不存在，则返回  -1。
+str1 = @“helloxxll“;
+str2 = @"ll";
+*/
+- (int)needStirng:(NSString *)str1 str2:(NSString *)str2 {
+    if ([str1 containsString:str2]) {
+        NSString *temp = [str2 substringToIndex:0];
+        for (int i = 0; i < str1.length; i++) {
+        }
+        NSRange rang = [str1 rangeOfString:str2];
+
+        return 0;
+    } else {
+        return -1;
+    }
+}
+
+//快 慢指针
+- (void)printLegnth {
+    NSMutableArray *array = [NSMutableArray arrayWithObjects:@(1), @(1), @(2), @(3), @(3), nil];
+    NSInteger slow = 0;
+    NSInteger fast = 0;
+    while (fast != array.count) {
+        NSNumber *value1 =  array[slow];
+        NSNumber *value2 =  array[fast];
+        if (value1.intValue == value2.intValue) {
+            fast++;
+        } else {
+            slow++;
+            array[slow] = array[fast];
+            fast++;
+        }
+    }
+    NSLog(@"slow+1==%ld", slow + 1);
+}
+
+/*
 *  【冒泡排序】：相邻元素两两比较，比较完一趟，最值出现在末尾
 *  第1趟：依次比较相邻的两个数，不断交换（小数放前，大数放后）逐个推进，最值最后出现在第n个元素位置
 *  第2趟：依次比较相邻的两个数，不断交换（小数放前，大数放后）逐个推进，最值最后出现在第n-1个元素位置
@@ -50,16 +116,6 @@
     return array;
 }
 
-- (void)_bubbleSortWithArray:(NSMutableArray *)array {
-    for (int i = 0; i < array.count - 1; i++) {
-        for (int j = 0; j < array.count - 1 - i; j++) {
-            if ([array[j] intValue] > [array[j + 1] index]) {
-                [array exchangeObjectAtIndex:j withObjectAtIndex:j + 1];
-            }
-        }
-    }
-}
-
 /**
  选择排序  每一次从待排序的数据元素中选出最小（或最大）的一个元素，存放在序列的起始位置，直到全部待排序的数据元素排完。
  *  【选择排序】：最值出现在起始端
@@ -70,7 +126,7 @@
  *  第n-1趟，最终可实现数据的升序（降序）排列。
  *
  */
-- (void)selectionSortWithMutableArray:(NSMutableArray *)mutableArray{
+- (void)selectionSortWithMutableArray:(NSMutableArray *)mutableArray {
     for (int i = 0; i < mutableArray.count; i++) {
         int index = i;
 
@@ -229,6 +285,28 @@ int findKey(int *arr, int length, int key)
     return -1;
 }
 
++ (void)testSum {
+    int sum =  sumAdd(2, 4);
+    NSLog(@"相加递归=");
+}
+
+//两个数n、m 如果是n= 2 m=5，用递归实现2 3 4 5相加等于14；
+int sumAdd(int n1, int n2)
+{
+    if (n1 == n2) {
+        NSLog(@"相加递归1==%d", n1);
+        return n1;
+    }
+    if (n1 > n2) {
+        int temp = n1;
+        n1 = n2;
+        n2 = temp;
+    }
+    int a = sumAdd(n1, n2 - 1) + n2;
+    NSLog(@"相加递归2==%d", a);
+    return a;
+}
+
 /**辗转相除法,更相减损法
  最大公约数
  @param num1 整数1
@@ -314,6 +392,15 @@ int findKey(int *arr, int length, int key)
     }
 }
 
+int fib(int n)
+{
+    if (n < 2) {
+        return n;
+    } else {
+        return fib(n - 1) + fib(n - 2);
+    }
+}
+
 //用数组保存之前计算过的结果，减少大量重复计算，这样算法复杂度优化为 O(n)。
 - (NSUInteger)Fibonacci2:(NSUInteger)n {
     if (n < 2) {
@@ -345,6 +432,14 @@ int findKey(int *arr, int length, int key)
         //        NSLog(@"fb3耗时：%lf", [now1 timeIntervalSinceNow]);
         return b;
     }
+}
+
+// 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度
+// 输入: s = "abcabcbb"
+// 输出: 3
+// 解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3
+- (void)lengthOfLongestSubstring:(NSString *)str {
+    NSSet *set = [NSSet setWithArray:@[@"1", @"2"]];
 }
 
 @end

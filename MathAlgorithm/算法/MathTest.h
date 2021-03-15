@@ -12,6 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MathTest : NSObject
 
+int sumAdd(int n1, int n2);
++(void)testSum;
+- (void)testFunction;
+
+- (int)needStirng:(NSString *)str1 str2:(NSString *)str2;
+
 @end
 
 NS_ASSUME_NONNULL_END

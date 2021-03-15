@@ -13,20 +13,20 @@ struct Node * reverseList(struct Node*head){
    //定义遍历指针，初始化为头结点
    struct Node *p = head;
    // 反转后的链表头部
-   struct Node *newH = NULL;
+   struct Node *newHead = NULL;
    //遍历链表
    while (p != NULL) {
       //记录下一个节点
-      struct Node*temp = p -> next;
+      struct Node *temp = p -> next;
       // 当前结点的next指向新链表头部
-      p -> next = newH;
-       // 更改新链表头部为当前结点
-       newH = p;
+      p -> next = newHead;
+      // 更改新链表头部为当前结点
+      newHead = p;
       // 移动p指针
       p = temp;
    }
    // 返回反转后的链表头结点
-   return newH;
+   return newHead;
 }
 struct Node *constructList(void){
    //头结点定义
@@ -70,6 +70,44 @@ void char_reverse (char * cha){
   }
   
 }
+- (void)findSomeoneWithKeys:(NSArray <ReverseList *>*)flowers{
+
+}
++(void)mergeList:(NSArray *)arrA arrayB:(NSArray*)arrB{
+   NSInteger a = 0;
+   NSInteger b = 0;
+   NSInteger i = 0;
+   NSInteger aLength  = arrA.count;
+   NSInteger bLength = arrB.count;
+   NSMutableArray *result = [NSMutableArray array];
+   
+   while (a < aLength && b < bLength) {
+      NSNumber * x = arrA[a]; NSNumber* y = arrB[b];
+     if (x.integerValue <= y.integerValue) {
+       [result addObject:x];
+       a++;
+       NSLog(@"aa1==%ld",a);
+     }
+     else{
+      [result addObject:y];
+      b++;
+      NSLog(@"bb1==%ld",b);
+     }
+  }
+  while ( a < aLength ) {
+    [result addObject:arrA[a++]];
+    i++;
+    NSLog(@"aa2==%ld",a);
+
+  }
+  while (b < bLength){
+    [result addObject:arrB[b++]];
+    NSLog(@"bb2==%ld",b);
+    i++;
+  }
+  NSLog(@"===%@",result);
+   
+}
 //3...// 将有序数组a和b的值合并到一个数组result当中，且仍然保持有序
 void mergeList(int a[], int aLen, int b[], int bLen, int result[])
 {
@@ -110,5 +148,6 @@ void mergeList(int a[], int aLen, int b[], int bLen, int result[])
         i++;
     }
 }
+   
 @end
 

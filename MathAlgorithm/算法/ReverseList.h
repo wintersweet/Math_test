@@ -19,5 +19,8 @@ struct Node * reverseList(struct Node*head);
 struct Node *constructList(void);
 
 void printList(struct Node*head);
+
+
++(void)mergeList:(NSArray *)arrA arrayB:(NSArray*)arrB;
 @end
 

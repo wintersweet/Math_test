@@ -54,7 +54,7 @@
    NSLog(@"私有方法，无声明");
 }
 
-//动态方法
+//一 动态方法解析
 +(BOOL)resolveInstanceMethod:(SEL)sel{
    NSString *method = NSStringFromSelector(sel);
    NSLog(@"sel== %@",method);
@@ -69,7 +69,7 @@
 void newRun(id self,SEL sel,NSString *str){
   NSLog(@"run起来了没有- %@",str);
 }
-// 二.消息转发重定向
+// 二.消息转发
 -(id)forwardingTargetForSelector:(SEL)aSelector
 {
   NSLog(@"aSelector= %@",NSStringFromSelector(aSelector));
@@ -81,6 +81,7 @@ void newRun(id self,SEL sel,NSString *str){
 //  }
    return [super forwardingTargetForSelector:aSelector];
 }
+// 标准消息转发
 // 三。生成方法签名
 -(NSMethodSignature*)methodSignatureForSelector:(SEL)aSelector
 {

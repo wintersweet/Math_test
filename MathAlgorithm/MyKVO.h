@@ -9,15 +9,17 @@
 #import <Foundation/Foundation.h>
 
 @class Cat;
+@class  Animal;
 
 @interface MyKVO : NSObject
-
+@property(nonatomic,strong)Animal *ani;
+- (void)test;
 @end
 
 @interface Animal : NSObject <NSCopying>
 
 @property (nonatomic,strong)NSMutableArray *dataArray;
-@property(nonatomic,copy)NSString *name;
+@property(nonatomic,copy) NSString *name;
 @property(nonatomic,strong)Cat * cat;
 @end
 

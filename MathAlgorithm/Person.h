@@ -16,8 +16,11 @@
 @end
 
 @interface Person : NSObject <NSCopying>
+
 @property (strong, nonatomic) NSArray *studentArray1;
 @property (copy  , nonatomic) NSArray *studentArray2;
+
+@property (strong, nonatomic) NSString *names;
 
 //测试消息转发机制
 -(void)run;

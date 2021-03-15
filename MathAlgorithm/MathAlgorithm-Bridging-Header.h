@@ -4,5 +4,5 @@
 #ifndef MathAlgorithm-Bridging-Header_h
 #define MathAlgorithm-Bridging-Header_h
 
-
+#import "Runtime.h"
 #endif /* MathAlgorithm-Bridging-Header_h */

@@ -144,7 +144,7 @@
   }
   return self;
 }
-//新节点添加在o头部之前
+//新节点添加在头部之前
 -(void)addNodeAhHead:(SingleLinkedNode *)node{
   dic[node.key] = node;
   if (_headNode) {
@@ -176,7 +176,7 @@
   }
   SingleLinkedNode *tempNode;
   [dic removeObjectForKey:node.key];
-  //若删除节点不是尾节点，则将当前节点 替换 成当前节点的下一个节点；
+  //若删除节点不是尾节点，则将当前节点 替换成当前节点的 下一个节点；
   if (node.next) {
      tempNode = node.next;
      node.next = node.next.next;
@@ -185,7 +185,7 @@
      tempNode = nil;
      return _headNode;
   }else{
-     //从_headNode开始遍历链表，找到tempNode即node的前一个节点
+     //从_headNode开始遍历链表，找到tempNode 即node的前一个节点
      tempNode = _headNode;
      while (tempNode.next && [tempNode.next isEqual:node]) {
         tempNode = tempNode.next;
@@ -203,21 +203,21 @@
      return;
    }
    if ([_headNode isEqual:node]) {
-    return;
+     return;
    }
   //从_headNode开始遍历链表，找到tempNode即node的前一个节点；
   SingleLinkedNode * tempNode = _headNode;
   while (tempNode.next && ![tempNode.next isEqual:node]) {
-    tempNode = tempNode.next;
+     tempNode = tempNode.next;
   }
   if (tempNode.next) {
-    tempNode.next = node.next;
+     tempNode.next = node.next;
   }
   node.next = _headNode;
   _headNode = node;
 }
 //查找单向列表中的一个节点
--(SingleLinkedNode*) selecteNode:(NSString*)key
+-(SingleLinkedNode*)selecteNode:(NSString*)key
 {
   //当然了，因为定义了字典dicKeyVaue，可以通过此字典，直接返回对应key的node；
     //return dicKeyVaue[key];

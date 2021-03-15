@@ -12,11 +12,17 @@
 #import "Person+Category.h"
 #import "Runloop.h"
 #import "MyKVO.h"
+#import "ReverseList.h"
+#import "MathTest.h"
+#import "MathAlgorithm-Swift.h"
+typedef int MyInteger;
+typedef void (^block)(NSString *value);
+typedef void (^block1) (NSString *value);
 @interface ViewController ()<UITextFieldDelegate, PersonProtocol>
 {
     Person *person;
 }
-@property (weak, nonatomic) IBOutlet UITextField *TF;
+@property (weak, nonatomic)   IBOutlet UITextField *TF;
 @property (nonatomic, strong) NSMutableArray *mTempArr;
 @property (nonatomic, strong) Animal *ani;
 
@@ -31,11 +37,31 @@
 @implementation ViewController
 
 @synthesize sex = _testSex;
+- (void)xxBlock:(block)value xx:(void (^)(NSString *value))value1 xx1:(void (^)(NSString *value))value2 {
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     auto int age = 10;
     static int num = 25;
+    MyInteger a = 10;
+    [ReverseList mergeList:@[@4, @3] arrayB:@[@1, @4, @6]];
+    [self testKVO];
+
+    MathTest *math =  [[MathTest alloc]init];
+    [MathTest testSum];
+    [math testFunction];
+    NSMutableArray *arr1 = [NSMutableArray arrayWithObjects:@"1", @"2", @"3", nil];
+    NSMutableArray *arr2 = [NSMutableArray arrayWithCapacity:3];
+    __block int xx = 10;
+
+    [arr1 enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
+        [arr2 addObject:obj];
+//        [arr1 addObject:@"10"];
+        xx = idx;
+    }];
+    NSLog(@"测试结束");
+
 //    _TF.delegate = self;
 //    self.sex = @"测试性别";
 //
@@ -45,7 +71,6 @@
 //    //  [person run:@"12"];
 //
 //    [Runloop testRunloop];
-//    [self testKVO];
 //    testBlock1();
 //    testBlock2();
 //    testBlock3();
@@ -54,7 +79,34 @@
 //    [self initTicketStatusNotSave];
 //    [self testCopy];
 //    [self mutableInstanceCopy];
-    [self containerInstanceShallowCopy];
+//    [self containerInstanceShallowCopy];
+    int outPut = [self needStirng:@"hellowll" str2:@"ll"];
+//    [MathReview]
+//     MathReview.te
+//    [MathReview test1:@"hellow":@"ll"];
+    [[MathReview new] test2:@"hello" :@"ll"];
+    
+    [MathReview findTargetArr];
+    NSLog(@"1");
+}
+
+/*
+给定一个 haystack 字符串和一个 needle 字符串，在 haystack 字符串中找出 needle 字符串出现的第一个位置 (从0开始)。如果不存在，则返回  -1。
+str1 = @“hello“;
+str2 = @"ll";
+*/
+- (int)needStirng:(NSString *)str1 str2:(NSString *)str2 {
+    bool hasValue = NO;
+    NSInteger index = 0;
+    for (int i = 0; i < str1.length - str2.length; i++) {
+        NSString *nn = [str1 substringWithRange:NSMakeRange(i, str2.length)];
+        if ([nn isEqualToString:str2]) {
+            index = i;
+            hasValue = YES;
+            NSLog(@"111");
+        }
+    }
+    return hasValue == YES ? -1 : index;
 }
 
 //copy，       浅拷贝（指针复制）
@@ -131,15 +183,13 @@
     //不影响trueDeepCopyArray数组的第一个元素，是真正意义上的深拷贝
     NSLog(@"arrayMutableCopy[0]: %@", trueDeepCopyArray[0]);
 }
+
 #pragma mark---深浅copy 的几个应用
 /*
 1、@property (nonatomic, strong) NSMutableString *name;为什么不用copy修饰？
 若用copy修饰这个可变字符串属性，当给name属性赋值时，setter方法会触发深拷贝，
 导致结果是name属性不再可变，因为可变字符串的copy返回不可变对象
-
-
  */
-
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -404,25 +454,22 @@
     }
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    static int i = 0;
-    //控制是否是自动的
-//   [self.ani willChangeValueForKey:@"name"];
-//   self.ani.name = [NSString stringWithFormat:@"%d",i++];
-//   [self.ani didChangeValueForKey:@"name"];
-//    self.ani.cat.age = [NSString stringWithFormat:@"%d",i++];
-    NSLog(@"点击了");
-    [[self.ani mutableArrayValueForKey:@"dataArray"] addObject:@"1111"];
-    TestViewController *vc = [[TestViewController alloc]init];
-    [self presentViewController:vc animated:YES completion:^{
-    }];
-}
+- (void)testBlock {
+    Person *p1 = [[Person alloc]init];
+    __block Person *p2 = [[Person alloc]init];
+    p1.names = @"mike1";
+    p2.names = @"mike2";
 
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    NSLog(@"点击结束");
-    [[self.ani mutableArrayValueForKey:@"dataArray"] removeObject:@"1111"];
+    __block int vi =  1;
+    void (^ handleBlock)(NSString *) = ^(NSString *name) {
+        p1.names = name;
+        p2.names = name;
+        vi = 2;
+    };
+    handleBlock(@"Lucy");
+    NSLog(@"p1 == %@", p1.names);
+    NSLog(@"p2 == %@", p2.names);
+    NSLog(@"vi == %i", vi);
 }
 
 void testBlock1()
@@ -489,30 +536,60 @@ void testBlock4()
     });
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    static int i = 0;
+    //控制是否是自动的
+    [self.ani willChangeValueForKey:@"name"];
+    self.ani.name = [NSString stringWithFormat:@"%d", i++];
+    [self.ani didChangeValueForKey:@"name"];
+    self.ani.cat.age = [NSString stringWithFormat:@"%d", i++];
+    NSLog(@"点击了屏幕");
+//    [[self.ani mutableArrayValueForKey:@"dataArray"] addObject:@"1111"];
+}
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    NSLog(@"点击屏幕结束");
+    [[self.ani mutableArrayValueForKey:@"dataArray"] removeObject:@"1111"];
+}
+
+- (IBAction)click:(id)sender {
+    NSLog(@"点击按钮");
+    self.ani.name = @"新名字";
+    self.ani.cat.age = [NSString stringWithFormat:@"%d", 88];
+}
+
 - (void)testKVO
 {
     self.ani = [[Animal alloc]init];
     Cat *cat = [[Cat alloc]init];
 
-    self.ani.name = @"animale1";
+    self.ani.name = @"名字1";
     self.ani.cat = [cat copy];
     self.ani.cat.age = @"12";
-//1.   [self.ani addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:nil];
+
+//1.[self.ani addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew context:nil];
 //2.观察cat某个属性   [self.ani addObserver:self forKeyPath:@"cat.age" options:NSKeyValueObservingOptionNew context:nil];
 //3.观察cat   [self.accessibilityElements addObserver:self forKeyPath:@"cat" options:NSKeyValueObservingOptionNew context:nil];
     [self.ani addObserver:self forKeyPath:@"dataArray" options:NSKeyValueObservingOptionNew context:nil];
-    [self.ani.dataArray addObject:@"content_1"];
-    [self.ani.dataArray addObject:@"content_2"];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey, id> *)change context:(void *)context
 {
     if ([keyPath isEqualToString:@"dataArray"]) {
+        NSLog(@"dataArray");
         if (self.ani.dataArray.count > 0) {
             NSLog(@"观察数组change =%@", change);
         } else {
             NSLog(@"观察数组change =%@", change);
         }
+    }
+    if ([keyPath isEqualToString:@"name"]) {
+        NSLog(@"name");
+    }
+    if ([keyPath isEqualToString:@"cat.age"]) {
+        NSLog(@"cat.age");
     }
 }
 

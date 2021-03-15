@@ -15,6 +15,7 @@
 		D876F6CE259447BD00CCB751 /* SeniorInterview.m in Sources */ = {isa = PBXBuildFile; fileRef = D876F6CD259447BD00CCB751 /* SeniorInterview.m */; };
 		D876F74D25958B7100CCB751 /* HeadNews.m in Sources */ = {isa = PBXBuildFile; fileRef = D876F74C25958B7100CCB751 /* HeadNews.m */; };
 		D876FB5C259C1F1400CCB751 /* Block.m in Sources */ = {isa = PBXBuildFile; fileRef = D876FB5B259C1F1400CCB751 /* Block.m */; };
+		D881801025F60CE700EA49BC /* MathReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881800F25F60CE700EA49BC /* MathReview.swift */; };
 		D88461DD243D5F6F00F8C37D /* MathTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D88461DC243D5F6F00F8C37D /* MathTest.m */; };
 		D88461E3243D62CE00F8C37D /* NSObject+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = D88461E2243D62CE00F8C37D /* NSObject+Category.m */; };
 		D88461E6243EFA3B00F8C37D /* GCD.m in Sources */ = {isa = PBXBuildFile; fileRef = D88461E5243EFA3B00F8C37D /* GCD.m */; };
@@ -26,6 +27,7 @@
 		D899B3E1237BAC5D00A43C4F /* Set_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D899B3E0237BAC5D00A43C4F /* Set_test.swift */; };
 		D8B96D32245021C000D0ABD3 /* BinaryTree.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B96D31245021C000D0ABD3 /* BinaryTree.m */; };
 		D8D185FF22EEE63100A2C2D5 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D185FE22EEE63100A2C2D5 /* TestViewController.m */; };
+		D8DD0EA025EFA7A200F396F7 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8DD0E9F25EFA7A200F396F7 /* TestView.m */; };
 		D8E328EA2431DD59006A63F9 /* ReverseList.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E328E92431DD59006A63F9 /* ReverseList.m */; };
 		D8E85E0822E5A29B0066737A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E85E0722E5A29B0066737A /* AppDelegate.m */; };
 		D8E85E0B22E5A29B0066737A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E85E0A22E5A29B0066737A /* ViewController.m */; };
@@ -54,6 +56,7 @@
 		D876F74C25958B7100CCB751 /* HeadNews.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeadNews.m; sourceTree = "<group>"; };
 		D876FB5A259C1F1300CCB751 /* Block.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Block.h; sourceTree = "<group>"; };
 		D876FB5B259C1F1400CCB751 /* Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Block.m; sourceTree = "<group>"; };
+		D881800F25F60CE700EA49BC /* MathReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathReview.swift; sourceTree = "<group>"; };
 		D88461DB243D5F6F00F8C37D /* MathTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MathTest.h; sourceTree = "<group>"; };
 		D88461DC243D5F6F00F8C37D /* MathTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MathTest.m; sourceTree = "<group>"; };
 		D88461E1243D62CE00F8C37D /* NSObject+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Category.h"; sourceTree = "<group>"; };
@@ -75,6 +78,8 @@
 		D8B96D31245021C000D0ABD3 /* BinaryTree.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BinaryTree.m; sourceTree = "<group>"; };
 		D8D185FD22EEE63100A2C2D5 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		D8D185FE22EEE63100A2C2D5 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		D8DD0E9E25EFA7A200F396F7 /* TestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
+		D8DD0E9F25EFA7A200F396F7 /* TestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
 		D8E328E82431DD59006A63F9 /* ReverseList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReverseList.h; sourceTree = "<group>"; };
 		D8E328E92431DD59006A63F9 /* ReverseList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReverseList.m; sourceTree = "<group>"; };
 		D8E8424F23B5E05A00B7CAE3 /* InterviewHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterviewHeader.h; sourceTree = "<group>"; };
@@ -124,6 +129,7 @@
 				D81D04BC244D462D0065D18F /* LinkedNode.m */,
 				D8B96D30245021C000D0ABD3 /* BinaryTree.h */,
 				D8B96D31245021C000D0ABD3 /* BinaryTree.m */,
+				D881800F25F60CE700EA49BC /* MathReview.swift */,
 			);
 			path = "算法";
 			sourceTree = "<group>";
@@ -181,6 +187,8 @@
 				D83522EA22E9ACF000A8A50D /* SomeReview.c */,
 				D876F6CC259447BD00CCB751 /* SeniorInterview.h */,
 				D876F6CD259447BD00CCB751 /* SeniorInterview.m */,
+				D8DD0E9E25EFA7A200F396F7 /* TestView.h */,
+				D8DD0E9F25EFA7A200F396F7 /* TestView.m */,
 				D876F74B25958B7100CCB751 /* HeadNews.h */,
 				D876F74C25958B7100CCB751 /* HeadNews.m */,
 				D876FB5A259C1F1300CCB751 /* Block.h */,
@@ -286,11 +294,13 @@
 				D8FE18BB23978A1100B69586 /* KVO_KVCtest.swift in Sources */,
 				D88461DD243D5F6F00F8C37D /* MathTest.m in Sources */,
 				D88461EC243F100400F8C37D /* Runtime.m in Sources */,
+				D8DD0EA025EFA7A200F396F7 /* TestView.m in Sources */,
 				D876F74D25958B7100CCB751 /* HeadNews.m in Sources */,
 				D88461E3243D62CE00F8C37D /* NSObject+Category.m in Sources */,
 				D8B96D32245021C000D0ABD3 /* BinaryTree.m in Sources */,
 				D876FB5C259C1F1400CCB751 /* Block.m in Sources */,
 				D88461F2243F2F9E00F8C37D /* Person+Category.m in Sources */,
+				D881801025F60CE700EA49BC /* MathReview.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
