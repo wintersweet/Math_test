@@ -28,6 +28,91 @@ public class TreeNode: Comparable {
 }
 
 class MathReview: NSObject {
+    var node = TreeNode(1)
+    var linkNode = ListNode(1)
+    var num = 0
+    @objc func initTreeNodes() {
+//        node.left = TreeNode(1)
+//        node.left?.left = TreeNode(3)
+        node.right = TreeNode(2)
+        node.right?.right = TreeNode(4)
+        node.right?.right?.right = TreeNode(5)
+
+        let linkNode2 = ListNode(2)
+        let linkNode3 = ListNode(3)
+        let linkNode4 = ListNode(4)
+
+        linkNode.next = linkNode2
+        linkNode2.next = linkNode3
+        linkNode3.next = linkNode4
+    }
+
+    @objc func treeHeight() {
+//        let xx = height(node.right)
+//        print("获得二叉树右高度\(xx)")
+//        diguiTest(3)
+//        let fib = fiabo(7)
+        let newHead = reverseLinNode(linkNode)
+        print("获得二叉树右高度")
+//        abs(max(height(node.right), height(node.left))) + 1
+    }
+
+    func reverseList2(_ head: ListNode?) -> ListNode? {
+        if head == nil || head?.next == nil {
+        }
+        return nil
+    }
+     //翻转链表
+    func reverseLinNode(_ head: ListNode?) -> ListNode? {
+        print("循环开始")
+        if head == nil || head?.next == nil {
+            print("递...")
+            return head
+        }
+        let new_head = reverseLinNode(head?.next)
+        print("归...")
+        let temp = head?.next
+        temp?.next = head
+        head?.next = nil
+        return new_head
+    }
+    //斐波那契
+    func fiabo(_ n: Int) -> Int {
+        if n < 2 {
+            return n
+        } else {
+            return fiabo(n - 1) + fiabo(n - 2)
+        }
+    }
+
+    func diguiTest(_ depth: Int) {
+        var _depth = depth
+
+        print("循环===")
+        if _depth == 0 {
+            print("结束了1==\(_depth)")
+
+        } else {
+            _depth -= 1
+            diguiTest(_depth)
+            print("值==\(_depth)")
+        }
+        print("结束了2==\(num)")
+    }
+
+    func height(_ node: TreeNode?) -> Int {
+        print("循环===")
+        if node == nil {
+            print("结束===\n")
+            return 0
+        }
+        var xx = height(node?.right)
+        xx = xx + 1
+        print("高度===\(xx)")
+        print("值===\(node?.val ?? -100)\n")
+        return xx
+    }
+
     @objc public func test2(_ a1: String, _ b1: String) -> Int {
         var index = -1
         for i in 0 ... a1.count - b1.count {
@@ -61,17 +146,23 @@ class MathReview: NSObject {
     }
 }
 
-public class ListNode {
+public class ListNode: NSObject {
     public var val: Int
     public var next: ListNode?
     public init(_ val: Int) {
         self.val = val
         next = nil
     }
+
+    public init(_ val: Int, _ next: ListNode?) {
+        self.val = val
+        self.next = next
+    }
 }
 
-// 一个二叉树, 找到该树中两个指定节点的最近公共祖先
 class Solution: NSObject {
+    // MARK: 一个二叉树, 找到该树中两个指定节点的最近公共祖先
+
     func lowestCommonAncestor(_ root: TreeNode?, _ p: TreeNode?, _ q: TreeNode?) -> TreeNode? {
         if root == nil {
             return root
@@ -98,14 +189,16 @@ class Solution: NSObject {
         node.val = tempNode!.val
     }
 
-    // 找到两个单链表相交的起始节点
+    // MARK: 找到两个单链表相交的起始节点
+
     func getIntersectionNode(_ headA: ListNode?, _ headB: ListNode?) -> ListNode? {
         return nil
     }
 }
 
 class Solution1 {
-    // 1. 给你一个长度为 n 的整数数组 nums，其中 n > 1，返回输出数组 output ，其中 output[i] 等于 nums 中除 nums[i] 之外其余各元素的乘积。
+    // MARK: 1. 给你一个长度为 n 的整数数组 nums，其中 n > 1，返回输出数组 output ，其中 output[i] 等于 nums 中除 nums[i] 之外其余各元素的乘积。
+
     // 输入: [1,2,3,4]  输出: [24,12,8,6]
     @objc public func productExceptSelf(_ nums: [Int]) -> [Int] {
         let arr = [1, 2, 3]
@@ -113,7 +206,8 @@ class Solution1 {
         return [0, 1]
     }
 
-    // 2. 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度
+    // MARK: 2. 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度
+
     // 输入: s = "abcabcbb"
     // 输出: 3
     // 解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。
@@ -121,7 +215,8 @@ class Solution1 {
         return 0
     }
 
-//    给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
+    // MARK: 给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
+
 //    你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。
 //    给定 nums = [2, 7, 11, 15], target = 9
 //    因为 nums[0] + nums[1] = 2 + 7 = 9
@@ -141,7 +236,8 @@ class Solution1 {
         return []
     }
 
-    // 给定一个由整数组成的非空数组所表示的非负整数，在该数的基础上加一。
+    // MARK: 给定一个由整数组成的非空数组所表示的非负整数，在该数的基础上加一。
+
     // 最高位数字存放在数组的首位， 数组中每个元素只存储单个数字。
     // 你可以假设除了整数 0 之外，这个整数不会以零开头
     //  输入: [1,2,3]  输出: [1,2,4]  解释: 输入数组表示数字 123。
@@ -167,18 +263,217 @@ class Solution1 {
         return nums
     }
 
-    // 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度
+    // MARK: 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度
+
     // 输入: s = "abcabcbb"
     // 输出: 3
     // 解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3
     class func lengthOfLongestSubstring(_ s: String) -> Int {
-        let left = 0
-        let right = 0
-        let length = 0
+        var left = 0
+        var right = 0
+        var length = 0
         var arr = [String]()
         while right < s.count {
         }
 
         return 3
+    }
+
+    // MARK: 查询相交链表的 相交节点
+
+    class func setLinkNode(_ node1: ListNode?, _ node2: ListNode?) -> ListNode? {
+        var interSet: Set<ListNode> = []
+
+        var A: ListNode? = node1
+        var B: ListNode? = node2
+
+        while A != nil {
+            interSet.insert(A!)
+            A = A!.next
+        }
+        while B != nil {
+            if interSet.contains(B!) {
+                return B!
+            }
+            B = B?.next!
+        }
+
+        return ListNode(-1)
+    }
+
+    // MARK: 判断二叉树 是不对称二叉树
+
+    class func isMirroTree(_ node: ListNode) -> Bool {
+        return true
+    }
+
+    // MARK: 回文链表
+
+    func isPalindrome(_ head: ListNode?) -> Bool {
+        var newHead = head
+        var slow = head
+        var fast = head
+        var prev: ListNode?
+        while fast != nil { // 找mid 节点
+            slow = slow?.next
+            fast = fast?.next == nil ? fast?.next?.next : fast?.next
+        }
+        while slow != nil {
+            let temp = slow?.next
+            slow?.next = prev
+            prev = slow
+            slow = temp
+        }
+        while newHead != nil && prev != nil {
+            if newHead?.val != prev?.val {
+                return false
+            }
+            newHead = newHead?.next
+            prev = prev?.next
+        }
+        return true
+    }
+
+    // MARK: 两数相加
+
+    func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
+        var temp = l1
+        while l1 != nil {
+            var _l1 = l1
+            var _l2 = l2
+
+            var carry = l1!.val + l2!.val
+            var sum = 0
+            if carry < 10 {
+                carry = 0
+                sum = carry
+                temp?.val = sum
+            } else {
+                sum = carry - 10
+                carry = 1
+                temp?.val = sum
+            }
+            _l1 = _l1?.next
+            _l2 = _l2?.next
+            if _l2 == nil {
+                temp?.next = _l1
+
+            } else {
+                temp?.next = _l2
+            }
+        }
+        return temp
+    }
+}
+
+class Solution2 {
+    // MARK: 合并两个有序链表
+
+    func mergeTwoLists(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
+        // 递归
+//        if l1 == nil {
+//            return l2
+//        }
+//        if l2 == nil {
+//            return l1
+//        }
+//        if l1!.val < l2!.val {
+//            l1?.next = mergeTwoLists(l1?.next, l2)
+//            return l1
+//        } else {
+//            l2?.next = mergeTwoLists(l1, l2?.next)
+//            return l2
+//        }
+        // 方法2归并排序中的合并过程
+        let dummyNode = ListNode(0)
+        var cur = dummyNode
+        var _l1 = l1
+        var _l2 = l2
+
+        while _l1 != nil && _l2 != nil {
+            if _l1!.val < _l2!.val {
+                cur.next = _l1
+                _l1 = _l1?.next
+
+            } else {
+                cur.next = _l2
+                _l2 = _l2?.next
+            }
+            cur = cur.next!
+        }
+        if l1 == nil {
+            cur.next = l2
+        } else {
+            cur.next = l1
+        }
+
+        return dummyNode.next
+    }
+
+    // MARK: 翻转单链表
+
+    // 就地翻转
+    func reverseList(_ head: ListNode?) -> ListNode? {
+        var beg: ListNode?
+        var end: ListNode?
+        var newHead = head
+
+        if head == nil || head?.next == nil {
+            return newHead
+        }
+        beg = head
+        end = head?.next
+        while end != nil {
+            // 把end 先移除
+            beg?.next = end?.next
+            end?.next = head
+            newHead = end
+            // 为下次循环准备
+            end = beg?.next
+        }
+        return newHead
+    }
+
+    // 迭代发翻转
+    func reverseList1(_ head: ListNode?) -> ListNode? {
+        if head == nil || head?.next == nil {
+            return head
+        }
+        var beg: ListNode?
+        var mid = head
+        var end = head?.next
+        var nHead = head
+        while true {
+            mid?.next = beg
+            if end == nil {
+                break
+            }
+            beg = mid
+            mid = end
+            end = end?.next
+        }
+        nHead = mid
+        return nHead
+    }
+
+    // 头插法反转链表
+    func reverseList2(_ head: ListNode?) -> ListNode? {
+        if head == nil || head?.next == nil {
+            return head
+        }
+        var oldHead = head
+
+        var nHead: ListNode?
+        var temp: ListNode?
+        while oldHead != nil {
+            temp = oldHead
+            // 将 temp 从 head 中摘除
+            oldHead = oldHead?.next
+            // 将 temp 插入到 new_head 的头部
+            temp?.next = nHead
+            nHead = temp
+        }
+
+        return nHead
     }
 }

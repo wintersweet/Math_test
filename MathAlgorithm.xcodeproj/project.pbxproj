@@ -12,10 +12,12 @@
 		D81D04BD244D462D0065D18F /* LinkedNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D81D04BC244D462D0065D18F /* LinkedNode.m */; };
 		D83522E622E9AABF00A8A50D /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83522E522E9AABF00A8A50D /* Math.swift */; };
 		D83522EB22E9ACF000A8A50D /* SomeReview.c in Sources */ = {isa = PBXBuildFile; fileRef = D83522EA22E9ACF000A8A50D /* SomeReview.c */; };
+		D84F3FA32600A13B00DA6CDB /* Spinlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F3FA22600A13B00DA6CDB /* Spinlock.swift */; };
 		D876F6CE259447BD00CCB751 /* SeniorInterview.m in Sources */ = {isa = PBXBuildFile; fileRef = D876F6CD259447BD00CCB751 /* SeniorInterview.m */; };
 		D876F74D25958B7100CCB751 /* HeadNews.m in Sources */ = {isa = PBXBuildFile; fileRef = D876F74C25958B7100CCB751 /* HeadNews.m */; };
 		D876FB5C259C1F1400CCB751 /* Block.m in Sources */ = {isa = PBXBuildFile; fileRef = D876FB5B259C1F1400CCB751 /* Block.m */; };
 		D881801025F60CE700EA49BC /* MathReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = D881800F25F60CE700EA49BC /* MathReview.swift */; };
+		D881835325FF611400EA49BC /* NSProxyTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = D881835225FF611200EA49BC /* NSProxyTimer.m */; };
 		D88461DD243D5F6F00F8C37D /* MathTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D88461DC243D5F6F00F8C37D /* MathTest.m */; };
 		D88461E3243D62CE00F8C37D /* NSObject+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = D88461E2243D62CE00F8C37D /* NSObject+Category.m */; };
 		D88461E6243EFA3B00F8C37D /* GCD.m in Sources */ = {isa = PBXBuildFile; fileRef = D88461E5243EFA3B00F8C37D /* GCD.m */; };
@@ -50,6 +52,7 @@
 		D83522E522E9AABF00A8A50D /* Math.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		D83522E922E9ACF000A8A50D /* SomeReview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SomeReview.h; sourceTree = "<group>"; };
 		D83522EA22E9ACF000A8A50D /* SomeReview.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = SomeReview.c; sourceTree = "<group>"; };
+		D84F3FA22600A13B00DA6CDB /* Spinlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinlock.swift; sourceTree = "<group>"; };
 		D876F6CC259447BD00CCB751 /* SeniorInterview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeniorInterview.h; sourceTree = "<group>"; };
 		D876F6CD259447BD00CCB751 /* SeniorInterview.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeniorInterview.m; sourceTree = "<group>"; };
 		D876F74B25958B7100CCB751 /* HeadNews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeadNews.h; sourceTree = "<group>"; };
@@ -57,6 +60,8 @@
 		D876FB5A259C1F1300CCB751 /* Block.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Block.h; sourceTree = "<group>"; };
 		D876FB5B259C1F1400CCB751 /* Block.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Block.m; sourceTree = "<group>"; };
 		D881800F25F60CE700EA49BC /* MathReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathReview.swift; sourceTree = "<group>"; };
+		D881835125FF611200EA49BC /* NSProxyTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSProxyTimer.h; sourceTree = "<group>"; };
+		D881835225FF611200EA49BC /* NSProxyTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSProxyTimer.m; sourceTree = "<group>"; };
 		D88461DB243D5F6F00F8C37D /* MathTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MathTest.h; sourceTree = "<group>"; };
 		D88461DC243D5F6F00F8C37D /* MathTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MathTest.m; sourceTree = "<group>"; };
 		D88461E1243D62CE00F8C37D /* NSObject+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Category.h"; sourceTree = "<group>"; };
@@ -123,13 +128,14 @@
 			children = (
 				D8E328E82431DD59006A63F9 /* ReverseList.h */,
 				D8E328E92431DD59006A63F9 /* ReverseList.m */,
-				D88461DB243D5F6F00F8C37D /* MathTest.h */,
-				D88461DC243D5F6F00F8C37D /* MathTest.m */,
 				D81D04BB244D462D0065D18F /* LinkedNode.h */,
 				D81D04BC244D462D0065D18F /* LinkedNode.m */,
 				D8B96D30245021C000D0ABD3 /* BinaryTree.h */,
 				D8B96D31245021C000D0ABD3 /* BinaryTree.m */,
+				D88461DB243D5F6F00F8C37D /* MathTest.h */,
+				D88461DC243D5F6F00F8C37D /* MathTest.m */,
 				D881800F25F60CE700EA49BC /* MathReview.swift */,
+				D84F3FA22600A13B00DA6CDB /* Spinlock.swift */,
 			);
 			path = "算法";
 			sourceTree = "<group>";
@@ -165,8 +171,8 @@
 				D8FEF636239F815C00AD3BE0 /* Person.h */,
 				D8FEF637239F815C00AD3BE0 /* Person.m */,
 				D88461F0243F2F9E00F8C37D /* Person+Category.h */,
-				D88461F1243F2F9E00F8C37D /* Person+Category.m */,
 				D88461E1243D62CE00F8C37D /* NSObject+Category.h */,
+				D88461F1243F2F9E00F8C37D /* Person+Category.m */,
 				D88461E2243D62CE00F8C37D /* NSObject+Category.m */,
 				D81D04B524499A480065D18F /* MyKVO.h */,
 				D81D04B624499A480065D18F /* MyKVO.m */,
@@ -193,6 +199,8 @@
 				D876F74C25958B7100CCB751 /* HeadNews.m */,
 				D876FB5A259C1F1300CCB751 /* Block.h */,
 				D876FB5B259C1F1400CCB751 /* Block.m */,
+				D881835125FF611200EA49BC /* NSProxyTimer.h */,
+				D881835225FF611200EA49BC /* NSProxyTimer.m */,
 				D8E85E0C22E5A29B0066737A /* Main.storyboard */,
 				D8E85E0F22E5A29C0066737A /* Assets.xcassets */,
 				D8E85E1122E5A29C0066737A /* LaunchScreen.storyboard */,
@@ -279,6 +287,7 @@
 				D8D185FF22EEE63100A2C2D5 /* TestViewController.m in Sources */,
 				D88461E9243F0B5100F8C37D /* Animation.m in Sources */,
 				D876F6CE259447BD00CCB751 /* SeniorInterview.m in Sources */,
+				D881835325FF611400EA49BC /* NSProxyTimer.m in Sources */,
 				D88461EF243F180D00F8C37D /* Runloop.m in Sources */,
 				D8E85E0B22E5A29B0066737A /* ViewController.m in Sources */,
 				D8E85E1622E5A29C0066737A /* main.m in Sources */,
@@ -289,6 +298,7 @@
 				D81D04BA2449ADA20065D18F /* ObserverClass.m in Sources */,
 				D83522EB22E9ACF000A8A50D /* SomeReview.c in Sources */,
 				D8FEF638239F815C00AD3BE0 /* Person.m in Sources */,
+				D84F3FA32600A13B00DA6CDB /* Spinlock.swift in Sources */,
 				D83522E622E9AABF00A8A50D /* Math.swift in Sources */,
 				D8E328EA2431DD59006A63F9 /* ReverseList.m in Sources */,
 				D8FE18BB23978A1100B69586 /* KVO_KVCtest.swift in Sources */,

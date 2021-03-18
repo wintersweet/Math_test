@@ -15,6 +15,7 @@
 #import "ReverseList.h"
 #import "MathTest.h"
 #import "MathAlgorithm-Swift.h"
+
 typedef int MyInteger;
 typedef void (^block)(NSString *value);
 typedef void (^block1) (NSString *value);
@@ -42,6 +43,16 @@ typedef void (^block1) (NSString *value);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self get_global_queue];
+
+//    TestLock *lock = [[TestLock alloc]init];
+//    [lock inits];
+//    [lock start];
+    MathReview *review = [[MathReview alloc]init];
+    [review initTreeNodes];
+    [review treeHeight];
+    return;
+
     auto int age = 10;
     static int num = 25;
     MyInteger a = 10;
@@ -84,8 +95,8 @@ typedef void (^block1) (NSString *value);
 //    [MathReview]
 //     MathReview.te
 //    [MathReview test1:@"hellow":@"ll"];
-    [[MathReview new] test2:@"hello" :@"ll"];
-    
+    [[MathReview new] test2:@"hello":@"ll"];
+
     [MathReview findTargetArr];
     NSLog(@"1");
 }
@@ -193,9 +204,19 @@ str2 = @"ll";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW,  (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+}
+
+- (void)get_global_queue {
+    // 全局并发队列的获取方法
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    NSLog(@"111");
+    dispatch_sync(queue, ^{
+        NSLog(@"222");
     });
-//    [self testOperationQueue1];
+    dispatch_sync(queue, ^{
+        NSLog(@"333");
+    });
+    NSLog(@"444");
 }
 
 //MARK:测试线程死锁问题

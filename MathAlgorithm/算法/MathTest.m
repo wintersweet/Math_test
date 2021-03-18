@@ -23,15 +23,14 @@
 
 - (void)testFunction
 {
-    NSArray *arr =  @[@(7), @(10), @(5), @(15), @(8)];
+    NSArray *arr =  @[@(2), @(1), @(5), @(3)];
 //    NSArray *newArr = [arr reverseObjectEnumerator].allObjects;
 //    NSMutableArray *resourceArr = [NSMutableArray arrayWithArray:arr];
 //    NSMutableArray *bubbleArr =  [self bubbleSortWithArray:resourceArr];
-//    [self quickSortArray:resourceArr leftIndex:0 rightIndex:resourceArr.count - 1];
-
+    NSMutableArray *xx = [self quickSortArray:[NSMutableArray arrayWithArray:arr] leftIndex:0 rightIndex:arr.count - 1];
     int arrray[5] = { -2, 1, -3 };
-    int c = sizeof(arrray);
     maxSubArray(arrray);
+    [self mergeArr:@[@1, @3, @5] arr2:@[@2, @6]];
 }
 
 /*
@@ -77,6 +76,7 @@ str2 = @"ll";
     }
 }
 
+//删除排序数组中的重复项
 //快 慢指针
 - (void)printLegnth {
     NSMutableArray *array = [NSMutableArray arrayWithObjects:@(1), @(1), @(2), @(3), @(3), nil];
@@ -95,7 +95,21 @@ str2 = @"ll";
     }
     NSLog(@"slow+1==%ld", slow + 1);
 }
-
+//MARK:春招...
+//1.字符串反转 (头尾双指针，不断交换两个指针的字符即可)
+//2.链表的倒数第 k 个数
+//3. 设计求一个数的 n 次开方 (典型的二分题目，不会的建议看下我的二分讲义)
+//4. LRU 算法
+//5. 手撕一下，就是一个小车给定坐标位置，和当前面朝方向（NSWE），再输入前进转向情况和前进步数，输出小车的坐标位置和面朝方向
+//6.链表相加
+//7.leetcode 1567 乘积为正数的最长子数组长度
+- (void)reserseString:(NSString *)str {
+    NSString *head =   [str substringToIndex:1];
+    NSString *foot =   [str substringFromIndex:str.length-2];
+    
+    
+}
+//MARK:春招...
 /*
 *  【冒泡排序】：相邻元素两两比较，比较完一趟，最值出现在末尾
 *  第1趟：依次比较相邻的两个数，不断交换（小数放前，大数放后）逐个推进，最值最后出现在第n个元素位置
@@ -146,36 +160,36 @@ str2 = @"ll";
 }
 
 /**
- 快速排序
+ 快速排序  @[@(2), @(1), @(5), @(3)];
  通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，
  然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列
  */
-- (void)quickSortArray:(NSMutableArray *)array
-             leftIndex:(NSInteger)left
-            rightIndex:(NSInteger)right
+- (NSMutableArray *)quickSortArray:(NSMutableArray *)array
+                         leftIndex:(NSInteger)left
+                        rightIndex:(NSInteger)right
 {
     if (left > right) {
-        return;
+        return array;
     }
-    NSInteger i = left;
-    NSInteger j = right;
+    NSInteger i = left; // 1
+    NSInteger j = right; // 4
     //记录基准数 privoty
     NSInteger key = [array[i] integerValue];
     while (i < j) {
         //首先从右边j开始查找(从最右边往左找)比基准数(key)小的值<---
         while (i < j && key <= [array[j] integerValue])
             j--;
-        //如果从右边j开始查找的值[array[j] integerValue]比基准数小，则将查找的小值调换到i的位置
-        if (i < j) {
-            array[i] = array[j];
-        }
-        //从i的右边往右查找到一个比基准数小的值时，就从i开始往后找比基准数大的值 --->
+        //如果从右边j开始查找的值array[j]比基准数小，则将查找的小值调换到i的位置
+
+        array[i] = array[j];
+
+        //从i开始往后找比基准数大的值 --->
         while (i < j && [array[i] integerValue] <= key)
             i++;
-        //如果从i的右边往右查找的值[array[i] integerValue]比基准数大，则将查找的大值调换到j的位置
-        if (i < j) {
-            array[j] = array[i];
-        }
+        //从i的右边往右查找到一个比基准数key小的值时
+        //如果从i的右边往右查找的值array[i]比基准数大，则将查找的大值调换到j的位置
+
+        array[j] = array[i];
     }
     array[i] = @(key);
     //递归排序
@@ -183,6 +197,7 @@ str2 = @"ll";
     [self quickSortArray:array leftIndex:left rightIndex:i - 1];
     //将i右边的数重新排序
     [self quickSortArray:array leftIndex:i + 1 rightIndex:right];
+    return array;
 }
 
 /**
@@ -439,7 +454,35 @@ int fib(int n)
 // 输出: 3
 // 解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3
 - (void)lengthOfLongestSubstring:(NSString *)str {
-    NSSet *set = [NSSet setWithArray:@[@"1", @"2"]];
+    NSMutableSet *set = [NSMutableSet setWithArray:@[@"1", @"2"]];
+    bool xx = [set containsObject:@"1"];
+    [set removeObject:@"1"];
+}
+
+//MARK: 其他算法
+//快速排序、归并排序
+//二维数组查找(每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数)
+//二叉树的遍历：判断二叉树的层数
+//单链表判断环
+// [1,5,7]   [3,4]
+- (void)mergeArr:(NSArray *)arr1 arr2:(NSArray *)arr2 {
+    NSMutableArray *muaArr1 = [NSMutableArray arrayWithArray:arr1];
+    NSMutableArray *muaArr2 = [NSMutableArray arrayWithArray:arr2];
+    NSInteger m = muaArr1.count - 1;
+    NSInteger n = muaArr2.count - 1;
+    NSInteger k = m + n - 1;
+
+    while (m >= 1) {
+        if (([muaArr1[m] intValue] >= [muaArr2[n] intValue])) {
+        } else {
+        }
+    }
+
+    NSLog(@"结束");
+}
+
+void mergeA(int arr1[], int arr2[])
+{
 }
 
 @end
