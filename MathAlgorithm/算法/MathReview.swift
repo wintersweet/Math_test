@@ -8,6 +8,20 @@
 
 import Foundation
 
+public class ListNode: NSObject {
+    public var val: Int
+    public var next: ListNode?
+    public init(_ val: Int) {
+        self.val = val
+        next = nil
+    }
+
+    public init(_ val: Int, _ next: ListNode?) {
+        self.val = val
+        self.next = next
+    }
+}
+
 public class TreeNode: Comparable {
     public var val: Int
     public var left: TreeNode?
@@ -47,12 +61,22 @@ class MathReview: NSObject {
         linkNode3.next = linkNode4
     }
 
+    @objc func testNode() {
+        let node = LinkNodeAbout()
+        var listNode = node.initLinkNodes([1, 2, 3])
+        while listNode != nil {
+            print("listNode.值", listNode?.val)
+            listNode = listNode?.next
+        }
+        print("11")
+    }
+
     @objc func treeHeight() {
 //        let xx = height(node.right)
 //        print("获得二叉树右高度\(xx)")
 //        diguiTest(3)
 //        let fib = fiabo(7)
-        let newHead = reverseLinNode(linkNode)
+        let newHead = reverseLinNode1(linkNode)
         print("获得二叉树右高度")
 //        abs(max(height(node.right), height(node.left))) + 1
     }
@@ -62,7 +86,8 @@ class MathReview: NSObject {
         }
         return nil
     }
-     //翻转链表
+
+    // 翻转链表
     func reverseLinNode(_ head: ListNode?) -> ListNode? {
         print("循环开始")
         if head == nil || head?.next == nil {
@@ -76,7 +101,24 @@ class MathReview: NSObject {
         head?.next = nil
         return new_head
     }
-    //斐波那契
+
+    func reverseLinNode1(_ head: ListNode?) -> ListNode? {
+        print("循环开始")
+        var new_head: ListNode?
+        var p = head
+        while p != nil {
+            let temp = p?.next
+            // 当前结点的next指向新链表头部
+            p?.next = new_head
+            // 更改新链表头部为当前结点
+            new_head = p
+            // 移动p指针
+            p = temp
+        }
+        return new_head
+    }
+
+    // 斐波那契
     func fiabo(_ n: Int) -> Int {
         if n < 2 {
             return n
@@ -118,7 +160,6 @@ class MathReview: NSObject {
         for i in 0 ... a1.count - b1.count {
             let a = a1.index(a1.startIndex, offsetBy: i)
             let b = a1.index(a1.startIndex, offsetBy: b1.count + i - 1)
-
             let result = String(a1[a ... b])
             if result == b1 {
                 index = i
@@ -128,7 +169,7 @@ class MathReview: NSObject {
                 break
             }
         }
-
+        
         return -1
     }
 
@@ -143,20 +184,6 @@ class MathReview: NSObject {
         let nums = [1, 2, 5, 9]
         let xx = Solution1.numsArryPlusOne(nums)
         print("yy==", xx)
-    }
-}
-
-public class ListNode: NSObject {
-    public var val: Int
-    public var next: ListNode?
-    public init(_ val: Int) {
-        self.val = val
-        next = nil
-    }
-
-    public init(_ val: Int, _ next: ListNode?) {
-        self.val = val
-        self.next = next
     }
 }
 
@@ -336,8 +363,11 @@ class Solution1 {
 
     // MARK: 两数相加
 
+    // 输入：l1 = [2,4,3], l2 = [5,6,4]
+    // 输出：[7,0,8]
+    // 解释：342 + 465 = 807.
     func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
-        var temp = l1
+        let temp = l1
         while l1 != nil {
             var _l1 = l1
             var _l2 = l2
@@ -461,17 +491,15 @@ class Solution2 {
         if head == nil || head?.next == nil {
             return head
         }
-        var oldHead = head
-
+        var p = head
         var nHead: ListNode?
-        var temp: ListNode?
-        while oldHead != nil {
-            temp = oldHead
+
+        while p != nil {
+            let temp = p?.next
             // 将 temp 从 head 中摘除
-            oldHead = oldHead?.next
-            // 将 temp 插入到 new_head 的头部
-            temp?.next = nHead
-            nHead = temp
+            p?.next = nHead
+            nHead = p
+            p = temp
         }
 
         return nHead

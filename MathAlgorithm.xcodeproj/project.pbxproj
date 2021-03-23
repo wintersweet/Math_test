@@ -13,6 +13,8 @@
 		D83522E622E9AABF00A8A50D /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83522E522E9AABF00A8A50D /* Math.swift */; };
 		D83522EB22E9ACF000A8A50D /* SomeReview.c in Sources */ = {isa = PBXBuildFile; fileRef = D83522EA22E9ACF000A8A50D /* SomeReview.c */; };
 		D84F3FA32600A13B00DA6CDB /* Spinlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F3FA22600A13B00DA6CDB /* Spinlock.swift */; };
+		D84F401E2603269500DA6CDB /* LFU_LRU.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F401D2603269500DA6CDB /* LFU_LRU.swift */; };
+		D84F405D260470C100DA6CDB /* LineNodeAbout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F405C260470C100DA6CDB /* LineNodeAbout.swift */; };
 		D876F6CE259447BD00CCB751 /* SeniorInterview.m in Sources */ = {isa = PBXBuildFile; fileRef = D876F6CD259447BD00CCB751 /* SeniorInterview.m */; };
 		D876F74D25958B7100CCB751 /* HeadNews.m in Sources */ = {isa = PBXBuildFile; fileRef = D876F74C25958B7100CCB751 /* HeadNews.m */; };
 		D876FB5C259C1F1400CCB751 /* Block.m in Sources */ = {isa = PBXBuildFile; fileRef = D876FB5B259C1F1400CCB751 /* Block.m */; };
@@ -53,6 +55,8 @@
 		D83522E922E9ACF000A8A50D /* SomeReview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SomeReview.h; sourceTree = "<group>"; };
 		D83522EA22E9ACF000A8A50D /* SomeReview.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = SomeReview.c; sourceTree = "<group>"; };
 		D84F3FA22600A13B00DA6CDB /* Spinlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinlock.swift; sourceTree = "<group>"; };
+		D84F401D2603269500DA6CDB /* LFU_LRU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFU_LRU.swift; sourceTree = "<group>"; };
+		D84F405C260470C100DA6CDB /* LineNodeAbout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineNodeAbout.swift; sourceTree = "<group>"; };
 		D876F6CC259447BD00CCB751 /* SeniorInterview.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeniorInterview.h; sourceTree = "<group>"; };
 		D876F6CD259447BD00CCB751 /* SeniorInterview.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeniorInterview.m; sourceTree = "<group>"; };
 		D876F74B25958B7100CCB751 /* HeadNews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeadNews.h; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 				D88461DC243D5F6F00F8C37D /* MathTest.m */,
 				D881800F25F60CE700EA49BC /* MathReview.swift */,
 				D84F3FA22600A13B00DA6CDB /* Spinlock.swift */,
+				D84F401D2603269500DA6CDB /* LFU_LRU.swift */,
+				D84F405C260470C100DA6CDB /* LineNodeAbout.swift */,
 			);
 			path = "算法";
 			sourceTree = "<group>";
@@ -295,8 +301,10 @@
 				D81D04BD244D462D0065D18F /* LinkedNode.m in Sources */,
 				D898835E2452C74900D62344 /* MyContext.m in Sources */,
 				D8E85E0822E5A29B0066737A /* AppDelegate.m in Sources */,
+				D84F405D260470C100DA6CDB /* LineNodeAbout.swift in Sources */,
 				D81D04BA2449ADA20065D18F /* ObserverClass.m in Sources */,
 				D83522EB22E9ACF000A8A50D /* SomeReview.c in Sources */,
+				D84F401E2603269500DA6CDB /* LFU_LRU.swift in Sources */,
 				D8FEF638239F815C00AD3BE0 /* Person.m in Sources */,
 				D84F3FA32600A13B00DA6CDB /* Spinlock.swift in Sources */,
 				D83522E622E9AABF00A8A50D /* Math.swift in Sources */,

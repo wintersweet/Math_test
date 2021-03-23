@@ -51,6 +51,11 @@ typedef void (^block1) (NSString *value);
     MathReview *review = [[MathReview alloc]init];
     [review initTreeNodes];
     [review treeHeight];
+    [review testNode];
+    
+    MathTest *math1 =  [[MathTest alloc]init];
+    [math1 reserseString:@"abc"];
+    [math1 lengthOfLongestSubstring:@"abcabcbb"];
     return;
 
     auto int age = 10;

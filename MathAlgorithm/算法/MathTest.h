@@ -17,6 +17,8 @@ int sumAdd(int n1, int n2);
 - (void)testFunction;
 
 - (int)needStirng:(NSString *)str1 str2:(NSString *)str2;
+- (void)reserseString:(NSString *)str;
+- (NSInteger)lengthOfLongestSubstring:(NSString *)str;
 
 @end
 

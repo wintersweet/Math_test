@@ -95,21 +95,41 @@ str2 = @"ll";
     }
     NSLog(@"slow+1==%ld", slow + 1);
 }
-//MARK:春招...
+
+//MARK:招...
 //1.字符串反转 (头尾双指针，不断交换两个指针的字符即可)
-//2.链表的倒数第 k 个数
+//2. 链表的倒数第 k 个数
 //3. 设计求一个数的 n 次开方 (典型的二分题目，不会的建议看下我的二分讲义)
 //4. LRU 算法
 //5. 手撕一下，就是一个小车给定坐标位置，和当前面朝方向（NSWE），再输入前进转向情况和前进步数，输出小车的坐标位置和面朝方向
 //6.链表相加
 //7.leetcode 1567 乘积为正数的最长子数组长度
 - (void)reserseString:(NSString *)str {
-    NSString *head =   [str substringToIndex:1];
-    NSString *foot =   [str substringFromIndex:str.length-2];
-    
-    
+    NSString *result = @"";
+    for (NSInteger i = str.length - 1; i >= 0; i--) {
+        NSString *temp = [str substringWithRange:NSMakeRange(i, 1)];
+        result = [result stringByAppendingString:temp];
+    }
+    NSLog(@"1");
+    char *ca = (char *)[str UTF8String];
+//    char_reverse1(ca);
 }
-//MARK:春招...
+
+//2...字符串反转(和上面不是一个算发)
+void char_reverse1(char *cha)
+{
+    //定义头部指针 尾部指针
+    char *begin = cha;
+    char *end = cha + strlen(cha) - 1;
+    while (begin < end) {
+        char temp = *begin;
+        *(begin++) = *end;
+        *(end--) = temp;
+    }
+    printf("%s", cha);
+}
+
+//MARK:招...
 /*
 *  【冒泡排序】：相邻元素两两比较，比较完一趟，最值出现在末尾
 *  第1趟：依次比较相邻的两个数，不断交换（小数放前，大数放后）逐个推进，最值最后出现在第n个元素位置
@@ -395,7 +415,7 @@ int sumAdd(int n1, int n2)
     NSLog(@"primeNumber = %@", primeNumberArray);
 }
 
-//3.斐波那契数列
+//MARK:3.斐波那契数列
 /**
  斐波那契数列递归调用，指数级增长2^n
  */
@@ -449,14 +469,58 @@ int fib(int n)
     }
 }
 
+//MARK:使用滑动窗口来解决：滑窗的右边缘在滑窗内没有重复的地方向前移动，
+//左边缘在滑窗内没有重复的地方不动，有重复后便进行向右滑动。在此期间每滑动一次就比较窗口的大小
 // 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度
 // 输入: s = "abcabcbb"
 // 输出: 3
 // 解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3
-- (void)lengthOfLongestSubstring:(NSString *)str {
-    NSMutableSet *set = [NSMutableSet setWithArray:@[@"1", @"2"]];
-    bool xx = [set containsObject:@"1"];
-    [set removeObject:@"1"];
+- (NSInteger)lengthOfLongestSubstring:(NSString *)str {
+    NSMutableSet *set = [NSMutableSet set];
+    NSInteger left = 0, right = 0, length = 0;
+    while (right < str.length) {
+        NSString *charStr = [str substringWithRange:NSMakeRange(right, 1)];
+        if ([set containsObject:charStr]) {
+            NSString *aa = [str substringWithRange:NSMakeRange(left++, 1)];
+            [set removeObject:aa];
+        } else {
+            NSString *aa = [str substringWithRange:NSMakeRange(right++, 1)];
+            [set addObject:aa];
+        }
+        length = set.count > length ? set.count : length;
+    }
+    return length;
+}
+
+//MARK:编写一个函数，输入是一个无符号整数（以二进制串的形式），返回其二进制表达式中数字位数为 '1' 的个数
+//输入 00000000000000000000000000001011  输出：3
+- (int)hammingWeight:(int)n {
+    int count = 0;
+    while (n) {
+        count += n % 2;
+        n >>= 1;
+    }
+
+    return count;
+}
+
+//MARK:回文子串
+//给定一个字符串，你的任务是计算这个字符串中有多少个回文子串
+//具有不同开始位置或结束位置的子串，即使是由相同的字符组成，也会被视作不同的子串
+// 输入："abc"输出：3. 解释：三个回文子串: "a", "b", "c"
+//输入："aaa" ,输出：6. 解释：6个回文子串: "a", "a", "a", "aa", "aa", "aaa"
+
+//MARK:最长 回文子串
+- (void)countSubstrings:(NSString *)str {
+    NSInteger count = 0;
+}
+
+//MARK:给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效
+//有效字符串需满足：
+//1.左括号必须用相同类型的右括号闭合。
+//2.左括号必须以正确的顺序闭合。
+- (bool)isValid:(NSString *)str {
+    return true;
 }
 
 //MARK: 其他算法
