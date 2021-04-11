@@ -77,7 +77,7 @@ class Math:NSObject {
 @objc public  func flapAndFalpMap(){
         let a = ["1", "@", "2", "3", "a"]
         ///1...flatmap 会丢掉那些返回值为 nil 的值
-        let b =  a.compactMap{Int($0)}
+        let b = 0 //a.compactMap{Int($0)}
         // [1, 2, 3]
         let c = a.map{Int($0) ?? -1}
         //[Optional(1), nil, Optional(2), Optional(3), nil]

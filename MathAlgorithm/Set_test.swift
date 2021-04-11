@@ -141,6 +141,12 @@ struct  User {
     
 }
 extension User:Hashable{
+    var hashValue: Int {
+        return 1
+    }
+    
+   
+    
    //由于Hashable协议又符合Equatable协议，所以还要提供一个"是否相等"运算符(==)的实现
    static func ==(lhs: User, rhs: User) -> Bool {
        return lhs.name == rhs.name && lhs.age == rhs.age

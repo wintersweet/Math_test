@@ -174,10 +174,33 @@ class MathReview: NSObject {
     }
 
     @objc public class func findTargetArr() {
-        let nums = [1, 2, 3, 4]
+        var nums = [1, 2, 3, 4]
         let xx = Solution1.findTargetArr(nums, 6)
         print("xx==", xx)
         numsArryPlusOne()
+        let  sss = "111"
+        let arr1 =  Array(sss)
+        //测试代码
+        let ranges = [0..<3, 8..<10, 15..<17]
+        for index in ranges.joined() {
+           print(index, terminator: " ")
+       }
+        
+        let xx1 =  nums.index(1, offsetBy: 2)
+        let xx2 =  nums.suffix(from: 2)
+        let range = Range(0...2)
+//        nums.removeSubrange(range)
+//        nums.removeAll()
+        let xx3 =    nums[range]
+        
+        let array = ["a", "b", "c", "d", "e", "f"]
+        let range1:PartialRangeThrough = ...4
+        let range2:PartialRangeFrom = 1...
+        let range3:PartialRangeUpTo = ..<4
+        
+        print(array[range1])
+
+        
     }
 
     @objc public class func numsArryPlusOne() {

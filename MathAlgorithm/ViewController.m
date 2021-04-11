@@ -52,7 +52,8 @@ typedef void (^block1) (NSString *value);
     [review initTreeNodes];
     [review treeHeight];
     [review testNode];
-    
+
+    [MathReview findTargetArr];
     MathTest *math1 =  [[MathTest alloc]init];
     [math1 reserseString:@"abc"];
     [math1 lengthOfLongestSubstring:@"abcabcbb"];
