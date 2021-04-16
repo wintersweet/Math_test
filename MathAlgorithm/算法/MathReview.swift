@@ -212,7 +212,6 @@ class MathReview: NSObject {
 
 class Solution: NSObject {
     // MARK: 一个二叉树, 找到该树中两个指定节点的最近公共祖先
-
     func lowestCommonAncestor(_ root: TreeNode?, _ p: TreeNode?, _ q: TreeNode?) -> TreeNode? {
         if root == nil {
             return root
@@ -240,7 +239,6 @@ class Solution: NSObject {
     }
 
     // MARK: 找到两个单链表相交的起始节点
-
     func getIntersectionNode(_ headA: ListNode?, _ headB: ListNode?) -> ListNode? {
         return nil
     }
@@ -313,21 +311,6 @@ class Solution1 {
         return nums
     }
 
-    // MARK: 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度
-
-    // 输入: s = "abcabcbb"
-    // 输出: 3
-    // 解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3
-    class func lengthOfLongestSubstring(_ s: String) -> Int {
-        var left = 0
-        var right = 0
-        var length = 0
-        var arr = [String]()
-        while right < s.count {
-        }
-
-        return 3
-    }
 
     // MARK: 查询相交链表的 相交节点
 
@@ -353,12 +336,13 @@ class Solution1 {
 
     // MARK: 判断二叉树 是不对称二叉树
 
-    class func isMirroTree(_ node: ListNode) -> Bool {
+    func isMirroTree(_ node: ListNode) -> Bool {
         return true
     }
+    
 
     // MARK: 回文链表
-
+   //1-2-2-1 是，1-2-3不是
     func isPalindrome(_ head: ListNode?) -> Bool {
         var newHead = head
         var slow = head
@@ -368,13 +352,13 @@ class Solution1 {
             slow = slow?.next
             fast = fast?.next == nil ? fast?.next?.next : fast?.next
         }
-        while slow != nil {
+        while slow != nil {//翻转后半部分
             let temp = slow?.next
             slow?.next = prev
             prev = slow
             slow = temp
         }
-        while newHead != nil && prev != nil {
+        while newHead != nil && prev != nil {//比较
             if newHead?.val != prev?.val {
                 return false
             }

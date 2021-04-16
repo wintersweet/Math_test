@@ -14,7 +14,6 @@ class LinkNodeAbout {
         var head = ListNode(-1)
         var temp: ListNode?
         var cur = head
-        var index = 0
         for i in 0 ... arr.count - 1 {
             temp = ListNode(arr[i])
             temp?.next = nil
@@ -46,14 +45,12 @@ class LinkNodeAbout {
         var count = 0
         var cur = head
         var fast = head?.next, slow = head?.next
-        var index = 0
-        for i in 0 ... k {
-            index = i
+        for _ in 0 ... k {
             if fast != nil {
                 fast = fast?.next
             }
         }
-        while fast != nil {
+        while fast?.next != nil {
             slow = slow?.next
             fast = fast?.next
         }
